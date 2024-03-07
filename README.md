@@ -4,3 +4,6 @@
 # 4Devs
 
 ### Red Social creada por y para desarrolladores.
+
+## Boceto Figma RegisterPage
+![alt text](RegisterPage.png)
