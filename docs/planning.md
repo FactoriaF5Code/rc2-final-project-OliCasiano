@@ -18,6 +18,8 @@ Una red social para desarrolladores donde poder registrarte y tener un perfil ( 
 
 - Contacto directo con las empresas y recruiters.
 
+- Las empresas buscan gente proactiva, se meha ocurrido que como es una red social de ayuda tambien, las personas que ayudan a los usuarios, con codigo, consejos etc, la gente pueda vota, con un "me gusta especial", es decir tu como Junior pones un codigo en busca de una solución , cuando alguien te ayuda puedes dar me gusta a esa solución y esa persona va mejorando como "proactivo" asi tendras un estatus de poder ayudar a la gente de cara a las empresas.
+
 
 
 
