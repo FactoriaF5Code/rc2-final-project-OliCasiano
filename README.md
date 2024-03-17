@@ -26,3 +26,5 @@ Como Empresa:
 ## Boceto Figma RegisterPage
 
 ![alt text](registerPage.png)
+![alt text](image.png)
+![alt text](image-1.png)
