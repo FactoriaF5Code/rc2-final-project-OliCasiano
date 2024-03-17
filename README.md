@@ -25,6 +25,6 @@ Como Empresa:
 - Conseguir que las empresas puedan crear eventos, proyectos publicos para ver las aptitudes y conocer desarrolladores.
 ## Boceto Figma RegisterPage
 
-![alt text](registerPage.png)
+![alt text](image-2.png)
 ![alt text](image.png)
 ![alt text](image-1.png)
