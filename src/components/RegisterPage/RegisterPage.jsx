@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaUser, FaLock } from "react-icons/fa";
 import DevsLogo from '../../../public/4devslogo.png';
 import './RegisterPage.css';
+import axios from 'axios';
 
 function RegisterPage() {
     const [name, setName] = useState('');
@@ -34,12 +35,28 @@ function RegisterPage() {
         setPasswordMatch(e.target.value === password);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8080/api/register', {
+                name: name,
+                lastName: lastName,
+                email: email,
+                password: password
+            });
+            console.log(response.data);
+            // Limpiar el formulario o redirigir a otra página después de enviar los datos
+        } catch (error) {
+            console.error('Error al enviar los datos:', error);
+        }
+    };
+
     return (
         <div className="all-page">
             <div className='container-wrapper'>
                 <img src={DevsLogo} alt="4Devs Logo" className="img-logo" />
                 <div className='wrapper'>
-                    <form action="">
+                    <form onSubmit={handleSubmit}>
                         <h1>New User Register</h1>
                         <div className='input-box'>
                             <input type="text" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} required />
@@ -71,9 +88,9 @@ function RegisterPage() {
                             <label><input type="checkbox" required />Accepted Conditions</label>
                             <a href="#">Read Conditions</a>
                         </div>
-                        <button type="submit" disabled={!emailMatch || !passwordMatch}><Link to="/HomePage">Send</Link></button>
+                        <button type="submit" disabled={!emailMatch || !passwordMatch}>Send</button>
                         <div className="register-link">
-                            <p>You have an account?? <a href="#"><Link to="/HomePage">Login</Link></a></p>
+                            <p>You have an account??<Link to="/HomePage">Login</Link></p>
                         </div>
                     </form>
                 </div>
