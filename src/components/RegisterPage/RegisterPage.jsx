@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaLock } from "react-icons/fa";
 import DevsLogo from '../../../public/4devslogo.png';
 import './RegisterPage.css';
 import axios from 'axios';
 
 function RegisterPage() {
-    // let history = useHistory();
+    let navigate = useNavigate();
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -46,16 +46,12 @@ function RegisterPage() {
                 password: password
             });
             console.log(response.data);
+            navigate("/");
             
         } catch (error) {
             console.error('Error al enviar los datos:', error);
         }
-    };
-
-    // function handleClick() {
-    //     history.push("/");
-    //   }
-    
+    };    
 
     return (
         <div className="all-page">
@@ -63,7 +59,7 @@ function RegisterPage() {
                 <img src={DevsLogo} alt="4Devs Logo" className="img-logo" />
                 <div className='wrapper'>
                     <form onSubmit={handleSubmit}>
-                        <h1>New User Register</h1>
+                        <h1>Register new user</h1>
                         <div className='input-box'>
                             <input type="text" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} required />
                             <FaUser className='icon' />
@@ -91,12 +87,12 @@ function RegisterPage() {
                         </div>
                         {!passwordMatch && <p style={{ color: 'red' }}>Passwords do not match</p>}
                         <div className='remember-forgot'>
-                            <label><input type="checkbox" required />Accepted Conditions</label>
+                            <label><input type="checkbox" required />Accept Conditions</label>
                             <a href="#">Read Conditions</a>
                         </div>
                         <button type="submit" disabled={!emailMatch || !passwordMatch} >Send</button>
                         <div className="register-link">
-                            <p>You have an account??<Link to="/HomePage">Login</Link></p>
+                            <p>Do you have an account?<Link to="/HomePage">Login</Link></p>
                         </div>
                     </form>
                 </div>
