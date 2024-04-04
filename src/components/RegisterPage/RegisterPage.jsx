@@ -6,6 +6,7 @@ import './RegisterPage.css';
 import axios from 'axios';
 
 function RegisterPage() {
+    // let history = useHistory();
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -45,11 +46,16 @@ function RegisterPage() {
                 password: password
             });
             console.log(response.data);
-            // Limpiar el formulario o redirigir a otra página después de enviar los datos
+            
         } catch (error) {
             console.error('Error al enviar los datos:', error);
         }
     };
+
+    // function handleClick() {
+    //     history.push("/");
+    //   }
+    
 
     return (
         <div className="all-page">
@@ -88,7 +94,7 @@ function RegisterPage() {
                             <label><input type="checkbox" required />Accepted Conditions</label>
                             <a href="#">Read Conditions</a>
                         </div>
-                        <button type="submit" disabled={!emailMatch || !passwordMatch}>Send</button>
+                        <button type="submit" disabled={!emailMatch || !passwordMatch} >Send</button>
                         <div className="register-link">
                             <p>You have an account??<Link to="/HomePage">Login</Link></p>
                         </div>
