@@ -1,30 +1,13 @@
-import './Homepage.css';
+import './PerfilUser.css';
 import { FaHome } from "react-icons/fa";
-import { BsEnvelopePaperFill } from "react-icons/bs";
 import { IoPersonCircleSharp } from "react-icons/io5";
-import { FaSackDollar } from "react-icons/fa6";
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
 import DevsLogo from '../../../public/4devslogo.png';
 import { Link } from 'react-router-dom';
-import SearchBar from '../SearchBar/SearchBar.jsx'
 
-function HomePage() {
 
-    const handleLogout = async () => {
-        try {
-           await fetch('/logout', {
-               method: 'POST',
-               headers: { 'Content-Type': 'application/json' } // Si es necesario 
-           });
-    
-           // Redireccionar al usuario a la página de login
-           navigate('/'); // Asegúrate de tener 'navigate' disponible 
-    
-       } catch (error) {
-           console.error('Error cerrando sesión:', error);
-       }
-    }
+function PerfilUser() {
 
     return (
         <div className="move-asides">
@@ -34,9 +17,7 @@ function HomePage() {
                     <div>
                         <img src={DevsLogo} alt="4Devs Logo" className="img-logo" />
                         <h1><FaHome /><Link to="/HomePage"> Inicio</Link></h1>
-                        {/* <h1><BsEnvelopePaperFill /> Mensajes</h1> */}
                         <h1><IoPersonCircleSharp /><Link to="/PerfilUser"> Mi Perfil</Link></h1>
-                        {/* <h1><FaSackDollar /> Empleo</h1> */}
                     </div>
                     <div>
                         <div className="bussines-mode">
@@ -49,8 +30,7 @@ function HomePage() {
                                 defaultChecked
                             />
                         </div>
-                        <button className="out-button" type="submit" onClick={handleLogout}><Link to="/HomePage">Salir</Link></button> 
-
+                        <button className="out-button" type="submit" ><Link to="/HomePage">Salir</Link></button>
                         <div className="help-contact">
                             <p>Necesitas Ayuda? <a href="#">Contacto</a></p>
                         </div>
@@ -61,24 +41,17 @@ function HomePage() {
             <div className="doc-central">
                 <section className='header-post-central'>
                     <div className='title-post-central'>
-                        <h3>Que estas pensando hoy...</h3>
-                        <button className='button-add-post' type="submit" ><Link to="#">Añadir Post</Link></button>
+                        <h3>Perfil de </h3>
                     </div>
-                    <input className='wrapper-input-post' type="text" />
+                    <h3>NOMBRE</h3>
+                    <h3>APELLIDOS</h3>
+                    <h3>CORREO</h3>
+                    <h3>SOBRE MI</h3>
+                    <h3>REDES SOCIALES</h3>
                 </section>
                 </div>
-            <div className="aside-in-rigth">
-                <div className='wrapper-aside'>
-                    <div>
-                        <h1>Buscar Personas</h1>
-                        <SearchBar />
-                        <h1>Recomendaciones</h1>
-                        <h1>Post más populares</h1>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 }
 
-export default HomePage;
+export default PerfilUser;
