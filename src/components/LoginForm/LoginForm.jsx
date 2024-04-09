@@ -1,37 +1,30 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaLock } from "react-icons/fa";
 import DevsLogo from '../../../public/4devslogo.png';
 import './LoginForm.css';
-import axios from 'axios';
+import { useAuthenticationContext } from '../../authentication/AuthenticationProvider';
 
 function LoginForm() {
     const navigate = useNavigate();
+
+    const { login } = useAuthenticationContext();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        try {
-            const response = await axios.post('/api/login', {
-                email: email,
-                password: password
-            });
-      
-            if (response.status === 200) {
-                navigate('/HomePage');
-            } else {
-                setError('Invalid email or password');
-            }
-        } catch (error) {
-            if (error.response && error.response.status === 401) {
-                setError('Invalid email or password');
-            } else {
-                setError('An unexpected error occurred');
-            }
+
+        let loginOk = await login(email, password);
+        
+        if (loginOk) {
+            navigate("/HomePage")
         }
+
+        setError('Invalid email or password');
+
     };
 
     return (
