@@ -1,7 +1,35 @@
-.move-asides{
-    display: flex;
-    justify-content: space-between;
+.doc-central-post{
+    margin-top: 2vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    height: 95vh;
+    width: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: rgb(59, 59, 59);
+    border-radius: 10px;
+    overflow-y: hidden;
+    padding: 30px 40px;
 }
+
+.header-post-central {
+  width: 100%;
+}
+
+
+.button-add-post {
+  width: 10vw;
+  height: 45px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
 
 .wrapper-input-post {
   padding: 1vh;
@@ -56,5 +84,12 @@
     margin-top: 3vh;
     display: flex;
     justify-content: center;
+  }
+
+  .post-content {
+    overflow-y: auto;
+    max-height: calc(100% - 40px);
+    scrollbar-width: none;
+    padding: 0 20px;
   }
 

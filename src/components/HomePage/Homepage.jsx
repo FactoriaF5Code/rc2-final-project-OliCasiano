@@ -6,24 +6,20 @@ import { FaSackDollar } from "react-icons/fa6";
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
 import DevsLogo from '../../../public/4devslogo.png';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar.jsx'
+import PostForm from '../PostForm/PostForm.jsx';
 
 function HomePage() {
-
+    const navigate = useNavigate();
     const handleLogout = async () => {
         try {
-           await fetch('/logout', {
-               method: 'POST',
-               headers: { 'Content-Type': 'application/json' } // Si es necesario 
-           });
-    
-           // Redireccionar al usuario a la página de login
-           navigate('/'); // Asegúrate de tener 'navigate' disponible 
-    
-       } catch (error) {
-           console.error('Error cerrando sesión:', error);
-       }
+
+            navigate('/');
+
+        } catch (error) {
+            console.error('Error cerrando sesión:', error);
+        }
     }
 
     return (
@@ -34,9 +30,7 @@ function HomePage() {
                     <div>
                         <img src={DevsLogo} alt="4Devs Logo" className="img-logo" />
                         <h1><FaHome /><Link to="/HomePage"> Inicio</Link></h1>
-                        {/* <h1><BsEnvelopePaperFill /> Mensajes</h1> */}
                         <h1><IoPersonCircleSharp /><Link to="/PerfilUser"> Mi Perfil</Link></h1>
-                        {/* <h1><FaSackDollar /> Empleo</h1> */}
                     </div>
                     <div>
                         <div className="bussines-mode">
@@ -49,7 +43,7 @@ function HomePage() {
                                 defaultChecked
                             />
                         </div>
-                        <button className="out-button" type="submit" onClick={handleLogout}><Link to="/HomePage">Salir</Link></button> 
+                        <button className="out-button" type="submit" onClick={handleLogout}>Salir</button>
 
                         <div className="help-contact">
                             <p>Necesitas Ayuda? <a href="#">Contacto</a></p>
@@ -58,15 +52,11 @@ function HomePage() {
 
                 </div>
             </div>
-            <div className="doc-central">
-                <section className='header-post-central'>
-                    <div className='title-post-central'>
-                        <h3>Que estas pensando hoy...</h3>
-                        <button className='button-add-post' type="submit" ><Link to="#">Añadir Post</Link></button>
-                    </div>
-                    <input className='wrapper-input-post' type="text" />
-                </section>
-                </div>
+
+
+            <PostForm />
+
+
             <div className="aside-in-rigth">
                 <div className='wrapper-aside'>
                     <div>
