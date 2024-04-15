@@ -27,17 +27,6 @@
 
 }
 
-.button-add-post {
-  width: 10vw;
-  height: 45px;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 16px;
-  color: #ffffff;
-  font-weight: 700;
-}
-
 .title-post-central {
   display: flex;
   flex-direction: row;
@@ -90,8 +79,8 @@
   .bussines-mode {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 2vh;
+    margin-left: 1vh;
   }
 
   .help-contact {

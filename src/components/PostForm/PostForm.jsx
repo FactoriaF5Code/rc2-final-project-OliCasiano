@@ -1,5 +1,35 @@
 import "./PostForm.css";
 import { useState } from 'react';
+import { FaRegImage } from "react-icons/fa6";
+import { FaThumbsUp, FaComment } from 'react-icons/fa';
+
+function Post({ content, images }) {
+
+    const [liked, setLiked] = useState(false);
+
+    const handleLikeClick = () => {
+        setLiked(!liked);
+    };
+    return (
+        <div className="post-container">
+            <div className="post">
+                <p>{content}</p>
+                <div className="post-images">
+                    {images.map((image, index) => (
+                        <img key={index} src={URL.createObjectURL(image)} alt={`Uploaded Image ${index}`} />
+                    ))}
+                </div>
+                {/* Aquí puedes añadir botones como "Me gusta" y "Comentar" */}
+                <div className="post-actions">
+                    <button className={`like-button ${liked ? 'liked' : ''}`} onClick={handleLikeClick}>
+                        <FaThumbsUp /> Me gusta
+                    </button>
+                    <button className="comment-button"><FaComment /> Comentar</button>
+                </div>
+            </div>
+        </div>
+    );
+}
 
 
 function PostForm() {
@@ -18,17 +48,12 @@ function PostForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Lógica para enviar el contenido del post y las imágenes al backend
-        // Aquí se podría realizar una solicitud al backend para guardar el post con la imagen
-
-        // Añadir el post subido a la lista de posts
         const newPost = {
             content: content,
             images: images
         };
         setUploadedPosts([...uploadedPosts, newPost]);
 
-        // Limpiar los campos después de enviar el post
         setContent('');
         setImages([]);
     };
@@ -40,32 +65,33 @@ function PostForm() {
                     <h3>¿Qué estás pensando hoy...</h3>
                     <form onSubmit={handleSubmit}>
                         <input
-                            className='wrapper-input-post'
+                            className='wrapper-input-post-feed'
                             type="text"
                             value={content}
                             onChange={handleContentChange}
                             placeholder="Escribe tu publicación aquí..."
                         />
-                        <input
-                            type="file"
-                            accept="image/*"
-                            multiple
-                            onChange={handleImageChange}
-                        />
+                        <div>
+                            <label className="wrapper-button-add-image">
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    multiple
+                                    style={{ display: "none" }}
+                                    onChange={handleImageChange}
+                                />
+                                <FaRegImage className=""/>
+                            </label>
+                        </div>
                         <button className='button-add-post' type="submit" onClick={handleSubmit}>Añadir Post</button>
-
                     </form>
                 </div>
+                <hr />
             </section>
             <div className="post-content">
-                <h1>Post subidos</h1>
+                <h1>Ultimas Publicaciones</h1>
                 {uploadedPosts.map((post, index) => (
-                    <div key={index}>
-                        <p>{post.content}</p>
-                        {post.images.map((image, imageIndex) => (
-                            <img key={imageIndex} src={URL.createObjectURL(image)} alt={`Uploaded Image ${imageIndex}`} />
-                        ))}
-                    </div>
+                    <Post key={index} content={post.content} images={post.images} />
                 ))}
             </div>
         </div>

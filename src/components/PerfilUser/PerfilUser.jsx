@@ -16,19 +16,29 @@ function PerfilUser() {
 
                     <div>
                         <img src={DevsLogo} alt="4Devs Logo" className="img-logo" />
-                        <h1><FaHome /><Link to="/HomePage"> Inicio</Link></h1>
-                        <h1><IoPersonCircleSharp /><Link to="/PerfilUser"> Mi Perfil</Link></h1>
+                        <h1>
+                <FaHome />
+                <Link to="/HomePage" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Inicio
+                </Link>
+            </h1>
+            <h1>
+                <IoPersonCircleSharp />
+                <Link to="/PerfilUser" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Mi Perfil
+                </Link>
+            </h1>
                     </div>
                     <div>
                         <div className="bussines-mode">
-                            <h1>Modo Empresa
+                            {/* <h1>Modo Empresa
 
                             </h1>
                             <Switch
                                 checkedChildren={<CheckOutlined />}
                                 unCheckedChildren={<CloseOutlined />}
                                 defaultChecked
-                            />
+                            /> */}
                         </div>
                         <button className="out-button" type="submit" ><Link to="/HomePage">Salir</Link></button>
                         <div className="help-contact">

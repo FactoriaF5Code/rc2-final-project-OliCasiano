@@ -33,19 +33,19 @@ function LoginForm() {
                 <img src={DevsLogo} alt="4Devs Logo" className="img-logo" />
                 <div className='wrapper'>
                     <form onSubmit={handleSubmit}>
-                        <h1>Login</h1>
+                        <h1>Inicio sesión</h1>
                         <div className='input-box'>
                             <input type="text" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
                             <FaUser className='icon' />
                         </div>
                         <div className='input-box'>
-                            <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
+                            <input type="password" placeholder='Contraseña' value={password} onChange={(e) => setPassword(e.target.value)} required />
                             <FaLock className='icon' />
                         </div>
                         {error && <p className="error">{error}</p>}
                         <button type="submit">Login</button>
                         <div className="register-link">
-                            <p>Don't have an account?<Link to="/RegisterPage">Register</Link></p>
+                            <p>¿No tienes cuenta?<Link to="/RegisterPage"> Registrate</Link></p>
                         </div>
                     </form>
                 </div>

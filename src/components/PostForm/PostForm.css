@@ -18,27 +18,84 @@
   width: 100%;
 }
 
+hr {
+  opacity: 0.2;
+}
+
+.post-container {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px; /* Esto añade espacio entre cada publicación */
+}
+
+.post-actions{
+  display: flex;
+  flex-direction: row;
+}
+
+.like-button,
+.comment-button {
+    background-color: #f0f2f5;
+    border: none;
+    color: #65676b;
+    padding: 8px 12px;
+    border-radius: 999px; /* Esto crea un botón redondeado */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.like-button:hover,
+.comment-button:hover {
+    background-color: #dbeafe; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.like-button svg,
+.comment-button svg {
+    margin-right: 4px; /* Añade un espacio entre el icono y el texto */
+}
+
+.like-button.liked {
+  background-color: #1877f2; /* Color de Facebook */
+  color: #fff; /* Texto blanco */
+}
+
+.like-button.liked:hover {
+  background-color: #0e5a9c; /* Color más oscuro al pasar el ratón */
+}
+
 
 .button-add-post {
-  width: 10vw;
-  height: 45px;
   border: none;
-  border-radius: 40px;
   cursor: pointer;
   font-size: 16px;
-  color: #ffffff;
+  color: #680766;
+  background: transparent;
   font-weight: 700;
 }
 
 
-.wrapper-input-post {
+.wrapper-input-post-feed {
   padding: 1vh;
   margin-top: 2vh;
-  height: 50px;
-  border-radius: 40px;
-  border: none;
+  height: 100px;
+  margin-bottom: 2vh;
+  border-radius: 10px;
   width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: rgb(59, 59, 59);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  
 }
+
 
 .wrapper-aside {
     margin-top: 2vh;
@@ -71,13 +128,6 @@
     font-size: 16px;
     color: #333;
     font-weight: 700;
-  }
-
-  .bussines-mode {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2vh;
   }
 
   .help-contact {

@@ -46,10 +46,8 @@
   }
 
   .bussines-mode {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 2vh;
+    margin-right: 2vh;
   }
 
   .help-contact {
