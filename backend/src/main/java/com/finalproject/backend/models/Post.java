@@ -5,34 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.List;
-
-@SpringBootApplication
 @Entity
 public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String content;
 
-    // Puedes manejar las imágenes como una lista de strings que contienen las rutas de las imágenes
-    private List<String> images;
-
-    // Constructor, getters y setters
-    // Constructor sin argumentos
-    public Post() {}
-
-    // Constructor con todos los campos
-    public Post(String content, List<String> images) {
-        this.content = content;
-        this.images = images;
+    public Post() {
+        // Constructor vacío necesario para JPA
     }
 
-    // Getters y setters
+    // Getters y setters para id y content
+
     public Long getId() {
         return id;
     }
@@ -47,13 +33,5 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public List<String> getImages() {
-        return images;
-    }
-
-    public void setImages(List<String> images) {
-        this.images = images;
     }
 }

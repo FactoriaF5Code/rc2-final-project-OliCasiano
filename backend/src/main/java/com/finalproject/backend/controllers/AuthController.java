@@ -1,6 +1,7 @@
 package com.finalproject.backend.controllers;
 
 import com.finalproject.backend.configuration.CustomUserDetailService;
+import com.finalproject.backend.configuration.LoginResponse;
 import com.finalproject.backend.loginrequest.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

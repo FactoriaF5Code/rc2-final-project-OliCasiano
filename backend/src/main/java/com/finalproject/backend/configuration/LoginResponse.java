@@ -1,4 +1,4 @@
-package com.finalproject.backend.controllers;
+package com.finalproject.backend.configuration;
 
 public class LoginResponse {
     private final String email;
