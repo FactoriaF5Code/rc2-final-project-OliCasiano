@@ -1,4 +1,4 @@
-.doc-central-post{
+.doc-central-post {
   margin-top: 2vh;
   margin-left: 2vh;
   margin-right: 2vh;
@@ -32,32 +32,32 @@ hr {
   margin-bottom: 10px; /* Esto añade espacio entre cada publicación */
 }
 
-.post-actions{
+.post-actions {
   display: flex;
   flex-direction: row;
 }
 
 .like-button,
 .comment-button {
-    background-color: #f0f2f5;
-    border: none;
-    color: #65676b;
-    padding: 8px 12px;
-    border-radius: 999px; /* Esto crea un botón redondeado */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 10px;
+  background-color: #f0f2f5;
+  border: none;
+  color: #65676b;
+  padding: 8px 12px;
+  border-radius: 999px; /* Esto crea un botón redondeado */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .like-button:hover,
 .comment-button:hover {
-    background-color: #dbeafe; /* Cambia el color de fondo al pasar el ratón */
+  background-color: #dbeafe; /* Cambia el color de fondo al pasar el ratón */
 }
 
 .like-button svg,
 .comment-button svg {
-    margin-right: 4px; /* Añade un espacio entre el icono y el texto */
+  margin-right: 4px; /* Añade un espacio entre el icono y el texto */
 }
 
 .like-button.liked {
@@ -69,7 +69,6 @@ hr {
   background-color: #0e5a9c; /* Color más oscuro al pasar el ratón */
 }
 
-
 .button-add-post {
   border: none;
   cursor: pointer;
@@ -78,7 +77,6 @@ hr {
   background: transparent;
   font-weight: 700;
 }
-
 
 .wrapper-input-post-feed {
   padding: 1vh;
@@ -94,60 +92,64 @@ hr {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  
 }
-
 
 .wrapper-aside {
-    margin-top: 2vh;
-    margin-left: 2vh;
-    margin-right: 2vh;
-    width: 420px;
-    height: 95vh;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(30px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    color: rgb(59, 59, 59);
-    border-radius: 10px;
-    padding: 30px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .out-button {
-    width: 100%;
-    height: 45px;
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 700;
-  }
-
-  .help-contact {
-    margin-top: 3vh;
-    display: flex;
-    justify-content: center;
-  }
-
-  .post-content {
-    overflow-y: auto; /* permite que .post-content crezca con su contenido */
-    padding: 20px;
-    max-height: calc(95vh - 25vh);
-    margin-bottom: 20px; /* Ajusta si es necesario */
+  margin-top: 2vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  width: 420px;
+  height: 95vh;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: rgb(59, 59, 59);
+  border-radius: 10px;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
-  .post-images img {
-    max-width: 100%; /* Asegura que las imágenes no sobrepasen el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de las imágenes */
+.out-button {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
 }
+
+.help-contact {
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+
+.post-content {
+  overflow-y: auto; /* permite que .post-content crezca con su contenido */
+  padding: 20px;
+  max-height: calc(95vh - 25vh);
+  margin-bottom: 20px; /* Ajusta si es necesario */
+}
+
+.post-images img {
+  display: block; /* Asegúrate de que la imagen sea un bloque para aplicar márgenes automáticos */
+  margin: 0 auto; /* Esto centrará la imagen en el contenedor */
+  max-width: 100%; /* Limita el tamaño de la imagen para evitar desbordamientos */
+  max-height: 200px; /* Altura máxima para todas las imágenes en el feed */
+  object-fit: cover; /* Asegúrate de que las imágenes cubran el espacio asignado sin perder la proporción */
+  width: auto; /* Esto ayudará a mantener la relación de aspecto de la imagen */
+  height: auto; /* Esto también ayuda a mantener la relación de aspecto */
+}
+
 
 /* Personalizar la barra de desplazamiento para que sea menos visible en Webkit */
 .post-content::-webkit-scrollbar {
@@ -155,7 +157,12 @@ hr {
 }
 
 .post-content::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.2); /* Color del "thumb" de la barra de desplazamiento */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Color del "thumb" de la barra de desplazamiento */
   border-radius: 4px; /* Bordes redondeados para el thumb */
 }
 
@@ -166,5 +173,39 @@ hr {
 /* Personalizar la barra de desplazamiento en Firefox */
 .post-content {
   scrollbar-width: thin; /* Hace la barra de desplazamiento más delgada en Firefox */
-  scrollbar-color: rgba(0,0,0,0.2) transparent; /* Color de la barra y de la pista */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Color de la barra y de la pista */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegúrate de que esté sobre otros elementos */
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.error-message {
+  color: red;
+  /* Otros estilos como margin, padding, etc. para que encaje con tu diseño */
+}
+
+.image-upload-confirmation {
+  color: green; /* Color del texto */
+  margin-left: 10px; /* Espaciado entre el ícono y el texto */
+  display: flex; /* Para alinear ícono y texto */
+  align-items: center; /* Centra verticalmente el texto con el ícono */
+}
+
+.image-upload-confirmation svg {
+  margin-right: 5px; /* Espaciado entre el ícono y el texto */
 }
