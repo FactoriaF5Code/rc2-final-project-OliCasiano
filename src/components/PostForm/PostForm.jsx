@@ -1,36 +1,7 @@
 import "./PostForm.css";
 import { useState } from 'react';
 import { FaRegImage } from "react-icons/fa6";
-import { FaThumbsUp, FaComment } from 'react-icons/fa';
-
-function Post({ content, images }) {
-
-    const [liked, setLiked] = useState(false);
-
-    const handleLikeClick = () => {
-        setLiked(!liked);
-    };
-    return (
-        <div className="post-container">
-            <div className="post">
-                <p>{content}</p>
-                <div className="post-images">
-                    {images.map((image, index) => (
-                        <img key={index} src={URL.createObjectURL(image)} alt={`Uploaded Image ${index}`} />
-                    ))}
-                </div>
-                {/* Aquí puedes añadir botones como "Me gusta" y "Comentar" */}
-                <div className="post-actions">
-                    <button className={`like-button ${liked ? 'liked' : ''}`} onClick={handleLikeClick}>
-                        <FaThumbsUp /> Me gusta
-                    </button>
-                    <button className="comment-button"><FaComment /> Comentar</button>
-                </div>
-            </div>
-        </div>
-    );
-}
-
+import Post from "./Post";
 
 function PostForm() {
     const [content, setContent] = useState('');

@@ -1,24 +1,35 @@
 package com.finalproject.backend.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.List;
+
+@SpringBootApplication
 @Entity
 public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String content;
-    private LocalDateTime createdAt;
-    
 
-    public Post() {
-        this.createdAt = LocalDateTime.now();
+    private String content;
+
+    // Puedes manejar las imágenes como una lista de strings que contienen las rutas de las imágenes
+    private List<String> images;
+
+    // Constructor, getters y setters
+    // Constructor sin argumentos
+    public Post() {}
+
+    // Constructor con todos los campos
+    public Post(String content, List<String> images) {
+        this.content = content;
+        this.images = images;
     }
 
     // Getters y setters
@@ -30,14 +41,6 @@ public class Post {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getContent() {
         return content;
     }
@@ -46,12 +49,11 @@ public class Post {
         this.content = content;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public List<String> getImages() {
+        return images;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setImages(List<String> images) {
+        this.images = images;
     }
 }
-

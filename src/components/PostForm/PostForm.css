@@ -1,21 +1,22 @@
 .doc-central-post{
-    margin-top: 2vh;
-    margin-left: 2vh;
-    margin-right: 2vh;
-    height: 95vh;
-    width: 100%;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(30px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    color: rgb(59, 59, 59);
-    border-radius: 10px;
-    overflow-y: hidden;
-    padding: 30px 40px;
+  margin-top: 2vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  max-height: 95vh; /* Esto restringe la altura del contenedor al 95% de la ventana gráfica */
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: rgb(59, 59, 59);
+  border-radius: 10px;
+  overflow-y: hidden; /* Habilita el desplazamiento solo dentro de este contenedor */
+  padding: 30px 40px; /* Se ajusta el padding como estaba originalmente */
 }
 
 .header-post-central {
   width: 100%;
+  height: 20vh;
 }
 
 hr {
@@ -137,9 +138,33 @@ hr {
   }
 
   .post-content {
-    overflow-y: auto;
-    max-height: calc(100% - 40px);
-    scrollbar-width: none;
-    padding: 0 20px;
-  }
+    overflow-y: auto; /* permite que .post-content crezca con su contenido */
+    padding: 20px;
+    max-height: calc(95vh - 25vh);
+    margin-bottom: 20px; /* Ajusta si es necesario */
+}
 
+  .post-images img {
+    max-width: 100%; /* Asegura que las imágenes no sobrepasen el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+/* Personalizar la barra de desplazamiento para que sea menos visible en Webkit */
+.post-content::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.post-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2); /* Color del "thumb" de la barra de desplazamiento */
+  border-radius: 4px; /* Bordes redondeados para el thumb */
+}
+
+.post-content::-webkit-scrollbar-track {
+  background-color: transparent; /* Fondo transparente para la pista de la barra */
+}
+
+/* Personalizar la barra de desplazamiento en Firefox */
+.post-content {
+  scrollbar-width: thin; /* Hace la barra de desplazamiento más delgada en Firefox */
+  scrollbar-color: rgba(0,0,0,0.2) transparent; /* Color de la barra y de la pista */
+}
