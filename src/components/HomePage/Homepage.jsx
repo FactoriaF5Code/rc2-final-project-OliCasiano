@@ -43,16 +43,7 @@ function HomePage() {
             </h1>
                     </div>
                     <div>
-                        {/* <div className="bussines-mode">
-                            <h1>Modo Empresa
-
-                            </h1>
-                            <Switch
-                                checkedChildren={<CheckOutlined />}
-                                unCheckedChildren={<CloseOutlined />}
-                                defaultChecked
-                            />
-                        </div> */}
+                    
                         <button className="out-button" type="submit" onClick={handleLogout}>Salir</button>
 
                         <div className="help-contact">

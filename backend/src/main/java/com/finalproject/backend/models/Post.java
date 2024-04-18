@@ -1,24 +1,27 @@
 package com.finalproject.backend.models;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Post {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
+    private String imagePath;  // Ruta donde se almacena la imagen en el servidor
 
     public Post() {
-        // Constructor vacío necesario para JPA
     }
 
-    // Getters y setters para id y content
+    public Post(Long id, String content, String imagePath) {
+        this.id = id;
+        this.content = content;
+        this.imagePath = imagePath;
+    }
 
+    // Getters y setters
     public Long getId() {
         return id;
     }
@@ -33,5 +36,13 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

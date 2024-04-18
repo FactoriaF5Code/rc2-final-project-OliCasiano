@@ -10,8 +10,8 @@ const SearchBar = ({ onSearch }) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
-    onSearch(query); // Realizar la búsqueda con el término actual
+    event.preventDefault(); 
+    onSearch(query); 
   };
 
   return (

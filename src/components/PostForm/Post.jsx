@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaThumbsUp, FaComment } from 'react-icons/fa';
 import "./PostForm.css";
 
-function Post({ content, images }) {
+function Post({ content, images = [] }) { 
     const [liked, setLiked] = useState(false);
     const [fullSizeImage, setFullSizeImage] = useState(null);
 
@@ -22,16 +22,18 @@ function Post({ content, images }) {
         <div className="post-container">
             <div className="post">
                 <p>{content}</p>
-                <div className="post-images">
-                {images.map((image, index) => (
-                    <img 
-                        key={index} 
-                        src={URL.createObjectURL(image)} 
-                        alt={`Uploaded by user`} 
-                        onClick={() => handleImageClick(image)}
-                    />
-                ))}
-            </div>
+                {images && images.length > 0 && (
+                    <div className="post-images">
+                        {images.map((imageUrl, index) => (
+                            <img 
+                                key={index} 
+                                src={imageUrl}  // Aquí usamos la URL directamente
+                                alt={`Uploaded by user`} 
+                                // Resto del código ...
+                            />
+                        ))}
+                    </div>
+                )}
                 <div className="post-actions">
                     <button className={`like-button ${liked ? 'liked' : ''}`} onClick={handleLikeClick}>
                         <FaThumbsUp /> Me gusta

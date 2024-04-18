@@ -2,7 +2,7 @@
   margin-top: 2vh;
   margin-left: 2vh;
   margin-right: 2vh;
-  max-height: 95vh; /* Esto restringe la altura del contenedor al 95% de la ventana gráfica */
+  max-height: 95vh; 
   width: 100%;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -10,8 +10,8 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: rgb(59, 59, 59);
   border-radius: 10px;
-  overflow-y: hidden; /* Habilita el desplazamiento solo dentro de este contenedor */
-  padding: 30px 40px; /* Se ajusta el padding como estaba originalmente */
+  overflow-y: hidden; 
+  padding: 30px 40px;
 }
 
 .header-post-central {
@@ -29,7 +29,7 @@ hr {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
-  margin-bottom: 10px; /* Esto añade espacio entre cada publicación */
+  margin-bottom: 10px; 
 }
 
 .post-actions {
@@ -43,7 +43,7 @@ hr {
   border: none;
   color: #65676b;
   padding: 8px 12px;
-  border-radius: 999px; /* Esto crea un botón redondeado */
+  border-radius: 999px; 
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -52,21 +52,21 @@ hr {
 
 .like-button:hover,
 .comment-button:hover {
-  background-color: #dbeafe; /* Cambia el color de fondo al pasar el ratón */
+  background-color: #dbeafe; 
 }
 
 .like-button svg,
 .comment-button svg {
-  margin-right: 4px; /* Añade un espacio entre el icono y el texto */
+  margin-right: 4px; 
 }
 
 .like-button.liked {
-  background-color: #1877f2; /* Color de Facebook */
-  color: #fff; /* Texto blanco */
+  background-color: #1877f2;
+  color: #fff;
 }
 
 .like-button.liked:hover {
-  background-color: #0e5a9c; /* Color más oscuro al pasar el ratón */
+  background-color: #0e5a9c; 
 }
 
 .button-add-post {
@@ -134,26 +134,24 @@ hr {
 }
 
 .post-content {
-  overflow-y: auto; /* permite que .post-content crezca con su contenido */
+  overflow-y: auto;
   padding: 20px;
   max-height: calc(95vh - 25vh);
-  margin-bottom: 20px; /* Ajusta si es necesario */
+  margin-bottom: 20px; 
 }
 
 .post-images img {
-  display: block; /* Asegúrate de que la imagen sea un bloque para aplicar márgenes automáticos */
-  margin: 0 auto; /* Esto centrará la imagen en el contenedor */
-  max-width: 100%; /* Limita el tamaño de la imagen para evitar desbordamientos */
-  max-height: 200px; /* Altura máxima para todas las imágenes en el feed */
-  object-fit: cover; /* Asegúrate de que las imágenes cubran el espacio asignado sin perder la proporción */
-  width: auto; /* Esto ayudará a mantener la relación de aspecto de la imagen */
-  height: auto; /* Esto también ayuda a mantener la relación de aspecto */
+  display: block; 
+  margin: 0 auto;
+  max-width: 100%; 
+  max-height: 200px;
+  object-fit: cover;
+  width: auto; 
+  height: auto; 
 }
 
-
-/* Personalizar la barra de desplazamiento para que sea menos visible en Webkit */
 .post-content::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra de desplazamiento */
+  width: 8px;
 }
 
 .post-content::-webkit-scrollbar-thumb {
@@ -162,18 +160,17 @@ hr {
     0,
     0,
     0.2
-  ); /* Color del "thumb" de la barra de desplazamiento */
-  border-radius: 4px; /* Bordes redondeados para el thumb */
+  );
+  border-radius: 4px; 
 }
 
 .post-content::-webkit-scrollbar-track {
-  background-color: transparent; /* Fondo transparente para la pista de la barra */
+  background-color: transparent; 
 }
 
-/* Personalizar la barra de desplazamiento en Firefox */
 .post-content {
-  scrollbar-width: thin; /* Hace la barra de desplazamiento más delgada en Firefox */
-  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Color de la barra y de la pista */
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; 
 }
 
 .modal {
@@ -186,7 +183,7 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegúrate de que esté sobre otros elementos */
+  z-index: 1000; 
 }
 
 .modal img {
@@ -196,16 +193,16 @@ hr {
 
 .error-message {
   color: red;
-  /* Otros estilos como margin, padding, etc. para que encaje con tu diseño */
+  
 }
 
 .image-upload-confirmation {
-  color: green; /* Color del texto */
-  margin-left: 10px; /* Espaciado entre el ícono y el texto */
-  display: flex; /* Para alinear ícono y texto */
-  align-items: center; /* Centra verticalmente el texto con el ícono */
+  color: green;
+  margin-left: 10px;
+  display: flex; 
+  align-items: center; 
 }
 
 .image-upload-confirmation svg {
-  margin-right: 5px; /* Espaciado entre el ícono y el texto */
+  margin-right: 5px; 
 }

@@ -43,7 +43,7 @@ function LoginForm() {
                             <FaLock className='icon' />
                         </div>
                         {error && <p className="error">{error}</p>}
-                        <button type="submit">Login</button>
+                        <button className='button-login' type="submit">Login</button>
                         <div className="register-link">
                             <p>¿No tienes cuenta?<Link to="/RegisterPage"> Registrate</Link></p>
                         </div>
