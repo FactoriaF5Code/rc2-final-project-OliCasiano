@@ -45,6 +45,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/api/posts").permitAll()
                         .requestMatchers("/api/**").authenticated()
+                        .requestMatchers("/uploads/**").permitAll()
+                        .requestMatchers("/uploads-dir/**").permitAll()
                         .anyRequest().permitAll())
                 .httpBasic(withDefaults());
 

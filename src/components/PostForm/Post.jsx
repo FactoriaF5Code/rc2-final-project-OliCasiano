@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaThumbsUp, FaComment } from 'react-icons/fa';
 import "./PostForm.css";
 
-function Post({ content, images = [] }) { 
+function Post({ content, imagePath, userName }) {
     const [liked, setLiked] = useState(false);
     const [fullSizeImage, setFullSizeImage] = useState(null);
 
@@ -10,28 +10,29 @@ function Post({ content, images = [] }) {
         setLiked(!liked);
     };
 
-    const handleImageClick = (image) => {
-        setFullSizeImage(image);
+    const handleImageClick = () => {
+        setFullSizeImage(imagePath);
     };
 
     const closeFullSizeImage = () => {
         setFullSizeImage(null);
     };
 
+    const formattedImagePath = imagePath.replace(/\\/g, '/').replace(/\s/g, '%20');
+
     return (
         <div className="post-container">
+            <div className="post-header">
+                <strong>{userName}</strong> {/* Muestra el nombre del usuario aquí */}
+            </div>
             <div className="post">
                 <p>{content}</p>
-                {images && images.length > 0 && (
-                    <div className="post-images">
-                        {images.map((imageUrl, index) => (
-                            <img 
-                                key={index} 
-                                src={imageUrl}  // Aquí usamos la URL directamente
-                                alt={`Uploaded by user`} 
-                                // Resto del código ...
-                            />
-                        ))}
+                {imagePath && (
+                    <div className="post-images" onClick={handleImageClick}>
+                        <img
+                            src={`http://localhost:8080/uploads/${formattedImagePath}`}
+                            alt="Uploaded by user"
+                        />
                     </div>
                 )}
                 <div className="post-actions">
@@ -43,7 +44,8 @@ function Post({ content, images = [] }) {
             </div>
             {fullSizeImage && (
                 <div className="modal" onClick={closeFullSizeImage}>
-                    <img src={URL.createObjectURL(fullSizeImage)} alt="Full size" />
+                    <img src={`http://localhost:8080/${formattedImagePath}`} alt="Uploaded by user" />
+
                 </div>
             )}
         </div>

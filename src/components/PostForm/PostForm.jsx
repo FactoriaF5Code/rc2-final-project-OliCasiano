@@ -29,7 +29,7 @@ function PostForm() {
             setErrorMessage('No se pudieron cargar las publicaciones.');
         }
     };
-    
+
 
     const handleContentChange = (e) => {
         setContent(e.target.value);
@@ -61,7 +61,7 @@ function PostForm() {
         };
         try {
             await axios.post('http://localhost:8080/api/posts', formData, { headers });
-            fetchPosts(); // Refetch posts after adding
+            fetchPosts();
             setContent('');
             setImages([]);
             setImageUploaded(false);
@@ -111,7 +111,7 @@ function PostForm() {
             <div className="post-content">
                 <h1>Ultimas Publicaciones</h1>
                 {uploadedPosts.map((post, index) => (
-                    <Post key={index} content={post.content} images={post.imagePath ? [post.imagePath] : []} />
+                    <Post key={index} content={post.content} imagePath={post.imagePath} userName={post.userName} />
                 ))}
             </div>
         </div>
