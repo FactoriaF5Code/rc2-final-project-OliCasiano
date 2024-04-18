@@ -1,0 +1,208 @@
+.doc-central-post {
+  margin-top: 2vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  max-height: 95vh; 
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: rgb(59, 59, 59);
+  border-radius: 10px;
+  overflow-y: hidden; 
+  padding: 30px 40px;
+}
+
+.header-post-central {
+  width: 100%;
+  height: 20vh;
+}
+
+hr {
+  opacity: 0.2;
+}
+
+.post-container {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px; 
+}
+
+.post-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.like-button,
+.comment-button {
+  background-color: #f0f2f5;
+  border: none;
+  color: #65676b;
+  padding: 8px 12px;
+  border-radius: 999px; 
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.like-button:hover,
+.comment-button:hover {
+  background-color: #dbeafe; 
+}
+
+.like-button svg,
+.comment-button svg {
+  margin-right: 4px; 
+}
+
+.like-button.liked {
+  background-color: #1877f2;
+  color: #fff;
+}
+
+.like-button.liked:hover {
+  background-color: #0e5a9c; 
+}
+
+.button-add-post {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #680766;
+  background: transparent;
+  font-weight: 700;
+}
+
+.wrapper-input-post-feed {
+  padding: 1vh;
+  margin-top: 2vh;
+  height: 100px;
+  margin-bottom: 2vh;
+  border-radius: 10px;
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: rgb(59, 59, 59);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.wrapper-aside {
+  margin-top: 2vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  width: 420px;
+  height: 95vh;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: rgb(59, 59, 59);
+  border-radius: 10px;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.out-button {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+}
+
+.help-contact {
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+
+.post-content {
+  overflow-y: auto;
+  padding: 20px;
+  max-height: calc(95vh - 25vh);
+  margin-bottom: 20px; 
+}
+
+.post-images img {
+  display: block; 
+  margin: 0 auto;
+  max-width: 100%; 
+  max-height: 200px;
+  object-fit: cover;
+  width: auto; 
+  height: auto; 
+}
+
+.post-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.post-content::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  );
+  border-radius: 4px; 
+}
+
+.post-content::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+
+.post-content {
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; 
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.error-message {
+  color: red;
+  
+}
+
+.image-upload-confirmation {
+  color: green;
+  margin-left: 10px;
+  display: flex; 
+  align-items: center; 
+}
+
+.image-upload-confirmation svg {
+  margin-right: 5px; 
+}
